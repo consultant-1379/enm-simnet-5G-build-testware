@@ -1,0 +1,2 @@
+command,expectedExitCode
+/var/simnet/enm-simnet-5G/script/UnitTests/bin/EbsFeaturesCheck.sh ,0

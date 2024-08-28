@@ -1,0 +1,2 @@
+command,expectedExitCode
+/var/simnet/enm-simnet-5G/script/UnitTests/bin/Check_UT_NR15_CBRS_LL_sim.sh ,0

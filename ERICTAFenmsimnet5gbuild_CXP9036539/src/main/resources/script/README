@@ -1,0 +1,758 @@
+8########################################################################################################################
+# Product Name         : SimNet ENM 5G
+# Product Number       : CXP 903 6539
+# Sprint Drop          : 24.11
+# Script Base Revision : CXP 903 6539-1-71
+# Repository           : https://gerrit.ericsson.se/#/admin/projects/OSS/com.ericsson.ci.simnet/enm-simnet-5G-build-testware
+########################################################################################################################
+# US/SNIPs/CRs/TRs/SNADs/SNAGs/ROLLBACK/EW
+# US = User Story
+# SNIP = SimNet Improvement Programme
+# CR = Change Request
+# SJ = SimNet Jira ticket
+# TR = Trouble Report for OSS-RC/ENM etc.
+# SNAD = SubNet Adapter
+# SNAG = Issue found by test
+# ROLLBACK = Issue requiring network functionailty rollback
+# EW = Emergency Workaround for an known issue
+#
+#------------------------------------------------------------
+#5g 24.11
+#
+#SJ - CXP 903 6539-1-71 - 31-05-2024 -zmknuam
+#
+#Scripts MOdified:
+#     dat/ProductData.env
+#     UnitTests/dat/productData.env
+#-------------------------------------------------------------
+#5G 24.10
+#
+#SJ - CXP 903 6539-1-70 - 14-05-2024 -znrvbia
+#
+#Scripts Modified:
+#     bin/DG2/4500setProductDataDG2.pl
+#     bin/DG2/4501set.pl
+#     dat/ProductData.env  
+#     UnitTests/dat/ProductData.env
+#--------------------------------------------------------------
+#5G 24.07
+#
+#SJ - CXP 903 6539-1-69 - 03-07-2024 -zmknuam
+#
+#Scripts Modified:
+#     dat/ProductData.env  
+#     UnitTests/dat/ProductData.env
+#--------------------------------------------------------------
+#5G 24.03
+#
+#SJ - CXP 903 6539-1-68 - 12-12-2023 -zmknuam
+#
+#Scripts Modified:
+#     dat/ProductData.env
+#     UnitTests/dat/productData.env
+#------------------------------------------------------------
+#5G 24.02
+#
+#SJ - CXP 903 6539-1-67 - 27-11-2023 - znrvbia
+#
+#Scripts Modified:
+#    bin/DG2/4500setProductDataDG2.pl
+#    bin/DG2/4501set.pl
+#    bin/DG2/4601createNRcells.pl
+#    bin/DG2/4604createExternalNRCells.pl
+#    bin/DG2/4607createNRLteRelations.pl
+#    bin/DG2/RelateWithLTE26.sh
+#    dat/ProductData.env
+#    UnitTests/dat/productData.env
+#------------------------------------------------------------
+#5G 23.17
+#
+#SJ - CXP 903 6539-1-66 - 26-10-2023 - zaruksn
+#
+#Scripts Modified:
+#    bin/DG2/generatesummary.sh
+#------------------------------------------------------------
+#5G 23.16
+#
+#SJ - CXP 903 6539-1-65 - 06-10-2023 - zjaisai
+#
+#Scripts Modified:
+#    bin/buildSims5G.pl
+#------------------------------------------------------------
+#5G 23.14
+#
+#SJ - CXP 903 6539-1-64 - 25-08-2023 - zjaisai
+#
+#Scripts Modified:
+#    bin/DG2/4601createNRcells.pl
+#-------------------------------------------------------------
+#5G 23.11
+#
+#SJ - CXP 903 6539-1-63 - 16-06-2023 - znrvbia
+#
+#Scripts Modified:
+#    bin/DG2/4500setProductDataDG2.pl
+#------------------------------------------------------------
+#5G 23.07
+#
+#SJ - CXP 903 6539-1-62 - 31-03-2023 - znrvbia
+#
+#Scripts Modified:
+#    bin/DG2/MultiratNR.sh
+#    dat/CONFIG.env
+#------------------------------------------------------------
+#5G 23.06
+#
+#SJ - CXP 903 6539-1-61 - 01-03-2023 - znrvbia
+#
+#Scripts Modified:
+#    UnitTest/bin/PmGroupCheck.pl
+#------------------------------------------------------------
+#------------------------------------------------------------
+#5G 23.06
+#
+#SJ - CXP 903 6539-1-60 - 23-02-2023-zjaisai
+#
+#Scripts Modified:
+#    bin/DG2/4610createNRCBRS_FRUs.pl
+#------------------------------------------------------------
+#------------------------------------------------------------
+#5G 23.06
+#
+#SJ - CXP 903 6539-1-59 - 21-02-2023-znrvbia
+#
+#Scripts Modified:
+#      bin/DG2/4500setProductDataDG2.pl
+#      bin/DG2/4501set.pl 
+#      bin/DG2/4601createNRcells.pl
+#------------------------------------------------------------
+#-----------------------------------------------------------
+#5G 23.03
+#
+#SJ - CXP 903 6539-1-58 - 26-12-2022-zjaisai
+#
+#Scripts Modified:
+#      bin/DG2/generateSummary.sh
+#------------------------------------------------------------
+#5G 23.01
+#
+#SJ - CXP 903 6539-1-57 - 23-11-2022-ztulsai
+#
+#Scripts Modified:
+#	bin/DG2/4301setPMpathforGenstats.pl
+#       bin/WriteSimData.sh
+#       bin/buildSims5G.pl
+#------------------------------------------------------------
+##-----------------------------------------------------------
+#5G 22.17
+#
+#SJ - CXP 903 6539-1-56 - 22-10-2022-zjaisai
+#
+#Scripts Modified:
+#	bin/DG2/4601createNRcells.pl
+#------------------------------------------------------------
+#5G 22.12
+#
+#SJ - CXP 903 6539-1-55 - 08-07-2022-zjaisai
+#
+#Scripts Modified:
+#    bin/DG2/4610createNRCBRS_FRUs.pl
+#    dat/CONFIG.env
+#-----------------------------------------------------------
+#5G 22.11
+#
+#SJ - CXP 903 6539-1-54 -28-06-2022-zjaisai
+#
+#Scripts Modified:
+#    bin/DG2/4610createNRCBRS_FRUs.pl
+## ---------------------------------------------------------
+#5G 22.09
+#
+#SJ - CXP 903 6539-1-53 -06-05-2022-zsivtar
+#SJ - NSS-39689
+#
+#Scripts Modified:
+#     bin/DG2/4301setPMpathforGenstats.pl
+##------------------------------------------------------------
+##------------------------------------------------------------
+5G 22.09
+#
+#SJ - CXP 903 6539-1-52 -05-05-2022 -znrvbia
+#SJ - NSS-39590
+#
+#Scripts Modified:
+      bin/DG2/4500setProductDataDG2.pl 
+##-------------------------------------------------------------
+##-------------------------------------------------------------
+##5G 22.08
+##
+##SJ - CXP 903 6539-1-51 -28-04-2022 -zsivtar
+##SJ - NSS-39377
+#
+##Scripts Modified:
+#	bin/DG2/RelateWithLTE26.sh 
+#-------------------------------------------------------------
+#-------------------------------------------------------------
+##5G 22.07
+##
+##SJ - CXP 903 6539-1-50 -12-04-2022 -znrvbia
+##SJ - NSS-38637
+##
+##Scripts Modified:
+##       bin/DG2/4500setProductDataDG2.pl
+##-------------------------------------------------------------
+##-------------------------------------------------------------
+#5G 22.07
+#
+#SJ - CXP 903 6539-1-49 -05-04-2022 -zsivtar
+#SJ - NSS-39294
+#
+#Scripts Modified:
+#       bin/DG2/4301setPMpathforGenstats.pl
+#-------------------------------------------------------------
+#-------------------------------------------------------------
+#5G 22.06
+#-------------------------------------------------------------
+#SJ - CXP 903 6539-1-48 -22-03-2022 -zsivtar
+#SJ - NSS-38982
+#
+#Scripts Modified:
+#       bin/DG2/4500setProductDataDG2.pl
+#-------------------------------------------------------------
+#--------------------------------------------------------------
+5G 22.06
+#--------------------------------------------------------------
+#SJ - CXP 903 6539-1-47 -09-03-2022 -zjaisai
+#SJ - NSS-38914 
+#
+#Scripts Modified:
+           bin/WriteSimData.sh
+           bin/DG2/4610createNRCBRS_FRUs.pl
+#-------------------------------------------------------------           
+5G 22.03
+#--------------------------------------------------------------
+#SJ - CXP 903 6539-1-46 -11-01-2022 -zhainic
+#SJ - NSS-38085
+#
+#Scripts Modified:
+           bin/networkScripts/createRelationsforLTE.sh
+#--------------------------------------------------------------
+5G 22.03
+#--------------------------------------------------------------
+#SJ - CXP 903 6539-1-45 -04-01-2022 -zjaisai
+#SJ - NSS-38167
+#
+#Scripts Modified:
+           bin/DG2/4500setProductDataDG2.pl
+           bin/DG2/4501set.pl
+           bin/DG2/4600createHcRuleMOs.pl
+#--------------------------------------------------------------
+5G 22.02
+#--------------------------------------------------------------
+#SJ - CXP 903 6539-1-44 -24-12-2021 -zhainic
+#SJ - NSS-38265
+#
+#Scripts Modified:
+           bin/DG2/4601createNRcells.pl
+#--------------------------------------------------------------
+5G 22.02
+#--------------------------------------------------------------
+#SJ - CXP 903 6539-1-43 -20-12-2021 -zhainic
+#SJ - NSS-38265
+#
+#Scripts Modified:
+           bin/DG2/4601createNRcells.pl
+#--------------------------------------------------------------
+5G 22.02
+#--------------------------------------------------------------
+#SJ - CXP 903 6539-1-42 -17-12-2021 -zhainic
+#SJ - NSS-38085
+#
+#Scripts Modified:
+#      bin/DG2/4240createFullAntennaSupport.pl
+#      bin/DG2/4310setSwInventory.pl
+#      bin/DG2/4343setFeatureState.pl
+#      bin/DG2/runDg2Scripts.sh
+#      bin/networkScripts/createCellInformation.sh
+#      bin/networkScripts/createNodeLinks.sh
+#      dat/COONFIG.env
+#--------------------------------------------------------------
+5G 22.02
+#--------------------------------------------------------------
+#SJ - CXP 903 6539-1-41 -16-12-2021 -zjaisai
+#SJ - NSS-38150
+#
+#Scripts Modified:
+#      dat/ProductData.env
+#      UnitTests/dat/productData.env
+#--------------------------------------------------------------   
+5G 22.02
+#---------------------------------------------------------------
+# SJ - CXP 903 6539-1-40 -14-12-2021 -zyamkan
+# SJ - NSS-NO-JIRA
+#
+# Scripts Modified:
+#      bin/nodeStart.sh
+#      bin/buildSims5G.pl
+#---------------------------------------------------------------
+5G 22.01
+#---------------------------------------------------------------
+# SJ - CXP 903 6539-1-39 -06-12-2021 -zyamkan
+# SJ - NSS-37657
+#
+# Scripts Modified:
+#      bin/DG2/4875setTwampAttributes.pl
+#      bin/WriteSimData.sh
+#      bin/buildSims5G.pl
+#      dat/ProductData.env
+#      UnitTests/dat/productData.env
+# Scripts Added:
+#      bin/nodeStart.sh
+#---------------------------------------------------------------
+5G 21.18
+#---------------------------------------------------------------
+# SJ - CXP 903 6539-1-38 -12-11-2021 -znrvbia
+# SJ - NSS-37474
+#
+# Scripts Modified:
+#      bin/DG2/4600createHcRuleMOs.pl
+#---------------------------------------------------------------
+# SJ - CXP 903 6539-1-37 -01-11-2021 -znrvbia
+# SJ - NSS-37474
+#
+# Scripts Modified:
+#      bin/DG2/4600createHcRuleMOs.pl
+#---------------------------------------------------------------
+5G 21.17
+#---------------------------------------------------------------
+# SJ - CXP 903 6539-1-36 -06-10-2021 -zyamkan
+# SJ - NSS-34405
+#
+# Scripts Modified:
+#      bin/networkScripts/createCellInformation.sh
+#---------------------------------------------------------------
+5G 21.14
+#---------------------------------------------------------------
+#### SJ - CXP 903 6539-1-35 -24/08/2021 -zjaisai
+#### #
+#### # Scripts Modified:
+#### #     dat/ProductData.env
+#### #     UnitTests/dat/productData.env
+## -------------------------------------------------------------
+#----------------------------------------------------------------
+5G 21.11
+#----------------------------------------------------------------
+#### SJ - CXP 903 6539-1-34 -10/06/2021 -zhainic
+#### # SJ - NSS-35718
+#### #
+#### # Scripts Added:
+#### #     bin/DG2/4999CUUPBulkMO.pl
+#### #     dat/ProductData.env
+#### #     UnitTests/dat/productData.env
+##----------------------------------------------------------------
+#----------------------------------------------------------------
+5G 21.10
+#----------------------------------------------------------------
+#### SJ - CXP 903 6539-1-33 -21/05/2021 -xmitsin
+#### # SJ - NSS-34841
+#### #
+#### # Scripts Added:
+#### #     bin/DG2/4999CUUPBulkMO.pl
+#### #     dat/ProductData.env
+#### #     UnitTests/dat/productData.env
+##----------------------------------------------------------------
+#----------------------------------------------------------------
+5G 21.08
+#----------------------------------------------------------------
+#### SJ - CXP 903 6539-1-32 -06/04/2021 -zjaisai
+#### # SJ - NSS-35147
+#### #
+#### # Scripts Modified:
+#### #     bin/buildSims5G.pl
+#### #     bin/DG2/4994MOBulkUpDG2.pl
+#### #     dat/ProductData.env
+#### #     UnitTests/dat/productData.env
+#### #
+#### # Scripts Added:
+#### #     bin/evnfm.pl
+##----------------------------------------------------------------
+#### SJ - CXP 903 6539-1-31 -06/04/2021 -znrvbia
+#### # SJ - NSS-35146
+#### #
+#### # Scripts Modified:
+#### #     bin/buildSims5G.pl
+#### #     dat/ProductData.env
+#### #     UnitTests/dat/productData.env
+#### #     UnitTests/bin/SimSizeCheck.sh
+#### #     UnitTests/bin/CheckCipherUnitTest.sh
+#### #     UnitTests/bin/ProductdataTest.pl
+#### #
+#### # Scripts Added:
+#### #     bin/vnf_lcm.pl
+##----------------------------------------------------------------
+#----------------------------------------------------------------
+5G 21.06
+#----------------------------------------------------------------
+### SJ - CXP 903 6539-1-30 -23/02/2021 -zsujmad
+### # SJ - NSS-34408
+### #
+### # Scripts Modified:
+### #     dat/ProductData.env
+### #     UnitTests/dat/productData.env
+#----------------------------------------------------------------
+#----------------------------------------------------------------
+5G 21.04
+#----------------------------------------------------------------
+### SJ - CXP 903 6539-1-29 -12/12/2020 -zyamkan
+### # SJ - NSS-33963
+### #
+### # Scripts Modified:
+### #     bin/DG2/MultiratNR.sh
+### #     bin/DG2/runDg2Scripts.sh
+### #     dat/CONFIG.env
+### #     dat/ProductData.env
+### #     UnitTests/dat/productData.env
+#----------------------------------------------------------------
+#----------------------------------------------------------------
+5G 21.03
+#----------------------------------------------------------------
+### SJ - CXP 903 6539-1-28 -21/12/2020 -zyamkan
+### # SJ - NSS-33640
+### #
+### # Scripts Modified:
+### #     bin/DG2/4316setProductType.pl
+### #     bin/DG2/4994MOBulkUpDG2.pl
+#----------------------------------------------------------------
+5G 21.02
+#----------------------------------------------------------------
+### SJ - CXP 903 6539-1-27 -30/11/2020 -zyamkan
+### # SJ - NSS-33395
+### #
+### # Scripts Modified:
+### #     bin/DG2/4602createNRInternalRelations.pl
+### #     bin/DG2/4994MOBulkUpDG2.pl
+### #     bin/DG2/4307createDG2UlInterference.pl
+### #     dat/ProductData.env
+### #     UnitTests/dat/productData.env
+#----------------------------------------------------------------
+### SJ - CXP 903 6539-1-26 -05/11/2020 -zyamkan
+### # SJ - NSS-33178,32904
+### #
+### # Scripts Modified:
+### #     bin/buildSims5G.pl
+### #     bin/rnn_vnfm.pl
+### #     dat/ProductData.env
+### #     UnitTests/bin/CheckCipherUnitTest.sh
+### #     UnitTests/dat/productData.env 
+### # Scripts Added:
+### #     bin/createCiphers.sh
+#----------------------------------------------------------------
+5G 20.15
+#----------------------------------------------------------------
+### SJ - CXP 903 6539-1-25 -08/09/2020 -zyamkan
+### # SJ - NSS-31826, NSS-32261, NSS-32218
+### #
+### # Scripts Modified:
+### #     bin/buildSims5G.pl
+### #     bin/vrc.pl
+### #     bin/vtf.pl
+### #     bin/DG2/runDg2Scripts.sh
+### #     bin/DG2/4307createDG2UlInterference.pl
+### #     bin/DG2/4500setProductDataDG2.pl
+### #     bin/DG2/4501set.pl
+### #     bin/DG2/4602createNRInternalRelations.pl
+### #     bin/DG2/4603setNRInternalcellRelations.pl
+### #     bin/DG2/4604createExternalNRCells.pl
+### #     bin/DG2/4605createExternalNRCellRelations.pl
+### #     bin/DG2/4607createNRLteRelations.pl
+### #     bin/DG2/4608setNRLteRelations.pl
+### #     bin/DG2/4609createNRLteCellRelations.pl
+### #     bin/networkScripts/createCellInformation.sh
+### #     bin/networkScripts/createNodeLinks.sh
+### #     bin/networkScripts/createRelationsforLTE.sh
+### #     dat/CONFIG.env
+### #     UnitTests/bin/ProductdataTest.pl
+### #     UnitTests/bin/SimSizeCheck.sh
+### #     UnitTests/dat/productData.env
+### #
+### # Scripts Added:
+### #     bin/DG2/MultiratNR.pl
+### #     bin/DG2/preSummanryGeneration.sh
+### #     dat/CONFIG_15K.env
+#----------------------------------------------------------------
+5G 20.13
+###----------------------------------------------------------------
+### SJ - CXP 903 6539-1-24 -23/07/2020 -zyamkan
+### # SJ - NO-JIRA
+### #
+### # Scripts Modified:
+### #     bin/buildSims5G.pl
+### #     bin/DG2/runDg2Scripts.sh
+### #     bin/DG2/runBasicScripts.sh
+### #     bin/DG2/4305setHwInventory.pl
+### #     bin/DG2/4501set.pl
+### #     bin/networkScripts/createNodeLinks.sh
+### #     dat/ProductData.env
+### #     dat/CONFIG.env
+### #     UnitTests/dat/productData.env
+#----------------------------------------------------------------
+5G 20.10
+###----------------------------------------------------------------
+### SJ - CXP 903 6539-1-23 -20/05/2020 -xharidu
+### # SJ - NSS-30194
+### #
+### # Scripts Modified:
+### #     bin/DG2/4607createNRLteRelations.pl
+#----------------------------------------------------------------
+5G 20.09
+###----------------------------------------------------------------
+### SJ - CXP 903 6539-1-22 -08/05/2020 -xharidu
+### # SJ - NSS-30445
+### #
+### # Scripts Modified:
+### #     bin/DG2/4601createNRcells.pl
+### #     bin/DG2/createTopology.sh
+#----------------------------------------------------------------
+5G 20.09
+###----------------------------------------------------------------
+### SJ - CXP 903 6539-1-21 -30/04/2020 -xharidu
+### # SJ - NSS-30194
+### #
+### # Scripts Modified:
+### #     bin/DG2/4607createNRLteRelations.pl
+#----------------------------------------------------------------
+5G 20.08
+###----------------------------------------------------------------
+### SJ - CXP 903 6539-1-20 -23/04/2020 -zyamkan
+### # SJ - NSS-29548
+### #
+### # Scripts Modified:
+### #     bin/buildSims5G.pl
+### #     dat/ProductData.env
+### #
+### # Scripts Added:
+### #     bin/PmUnitTest.pl
+### #     lib/General.pm
+###----------------------------------------------------------------
+### SJ - CXP 903 6539-1-19 -22/04/2020 -zsujmad
+### # SJ - NSS-28747
+### #
+### # Scripts Modified:
+### #     data/ScriptExecutionCommandsData.csv
+### #     bin/DG2/4500setProductDataDG2.pl
+### #     bin/DG2/runDg2Scripts.sh
+### #     bin/buildSims5G.pl
+### #     dat/CONFIG.env
+### #     dat/ProductData.env
+### #     ERICTAFenmsimnet5gbuild_operators/src/main/java/com/ericsson/ci/simnet/test/operators/CLIScriptExecutionOperator.java
+### ----------------------------------------------------------------
+#----------------------------------------------------------------
+5G 20.07
+###----------------------------------------------------------------
+##----------------------------------------------------------------
+### SJ - CXP 903 6539-1-18 -01/04/2020 -zyamkan
+### # SJ - NSS-27983
+### #
+### # Scripts Modified:
+### #     UnitTests/dat/productData.env
+### #     UnitTests/bin/pmFileLocation.sh
+### ----------------------------------------------------------------
+#----------------------------------------------------------------
+5G 20.06
+##----------------------------------------------------------------
+#----------------------------------------------------------------
+## SJ - CXP 903 6539-1-17 -26/02/2020 -zyamkan
+## # SJ - NSS-29323
+## #
+## # Scripts Modified:
+## #     bin/vtif.pl
+## #     UnitTests/dat/productData.env
+## #     UnitTests/bin/CheckCipherUnitTest.sh
+## ----------------------------------------------------------------
+#----------------------------------------------------------------
+5G 20.05
+#----------------------------------------------------------------
+----------------------------------------------------------------
+# SJ - CXP 903 6539-1-16 -05/02/2020 -zyamkan
+# # SJ - NSS-28970
+# #
+# # Scripts Modified:
+# #     bin/vtif.pl
+# ----------------------------------------------------------------
+5G 20.04
+#----------------------------------------------------------------
+# SJ - CXP 903 6539-1-15 -27/1/2020 -xharidu
+# SJ - NSS-28742
+#
+# Scripts Modified:
+#     bin/DG2/runDg2Scripts.sh
+#
+# Scripts Added:
+#     bin/DG2/generateSummary.sh
+#----------------------------------------------------------------
+#----------------------------------------------------------------
+5G 20.03
+#----------------------------------------------------------------
+# SJ - CXP 903 6539-1-14 -18/12/2019 -zyamkan
+# SJ - NSS-28372,NSS-28446
+#
+# Scripts Modified:
+#      bin/buildSims5G.pl
+#----------------------------------------------------------------
+#----------------------------------------------------------------
+-----------------------------------------------------------------
+5G 20.01
+-----------------------------------------------------------------
+----------------------------------------------------------------
+# SJ - CXP 903 6539-1-13 -13/11/2019 -zyamkan
+# # SJ - NSS-27849
+# #
+# # Scripts Modified:
+# #     bin/DG2/runDg2Scripts.sh
+# #     dat/CONFIG.env
+# #
+# # Scripts Added:
+# #    bin/DG2/RelateWithLTE26.sh
+# #    bin/DG2/ltenodes.txt
+# # ----------------------------------------------------------------
+----------------------------------------------------------------
+# SJ - CXP 903 6539-1-12 -12/11/2019 -zyamkan
+# # SJ - NSS-27846
+# #
+# # Scripts Modified:
+# #     bin/vrc.pl
+# ----------------------------------------------------------------
+#
+-----------------------------------------------------------------
+5G 19.17
+----------------------------------------------------------------
+----------------------------------------------------------------
+# SJ - CXP 903 6539-1-11 -04/11/2019 -zyamkan
+# SJ - NSS-27484
+#
+# Scripts Modified:
+#     bin/buildSims5G.pl
+#     dat/ProductData.env
+#     UnitTests/dat/productData.env
+
+# Scripts Added:
+#     bin/udm.pl
+----------------------------------------------------------------
+----------------------------------------------------------------
+# SJ - CXP 903 6539-1-10 -31/10/2019 -zyamkan
+# SJ - NSS-27634
+#
+# Scripts Modified:
+#     bin/DG2/4992createOptionalFeatureLicense.pl
+#     dat/CONFIG.env
+
+# Scripts Added:
+#     bin/DG2/4991createOAMAccesspoint.pl
+----------------------------------------------------------------
+----------------------------------------------------------------
+# SJ - CXP 903 6539-1-9 -31/10/2019 -zyamkan
+# SJ - NSS-26879
+#
+# Scripts Modified:
+#     bin/vtf.pl
+----------------------------------------------------------------
+----------------------------------------------------------------
+----------------------------------------------------------------
+5G 19.16
+----------------------------------------------------------------
+----------------------------------------------------------------
+# SJ - CXP 903 6539-1-8 -18/10/2019 -xharidu
+# SJ - NSS-27262
+#
+# Scripts Modified:
+#     bin/DG2/4500setProductDataDG2.pl
+#     bin/DG2/4601createNRcells.pl
+#     bin/DG2/4602createNRInternalRelations.pl
+#     bin/DG2/4603setNRInternalcellRelations.pl
+#     bin/DG2/4607createNRLteRelations.pl
+#     bin/DG2/4608setNRLteRelations.pl
+#     bin/DG2/createTopology.sh
+#
+# Scripts Added:
+#     bin/DG2/4604createExternalNRCells.pl
+#     bin/DG2/4605createExternalNRCellRelations.pl
+#     bin/DG2/4609createNRLteCellRelations.pl
+----------------------------------------------------------------
+----------------------------------------------------------------
+5G 19.16
+----------------------------------------------------------------
+----------------------------------------------------------------
+# SJ - CXP 903 6539-1-7 -05/09/2019 -zyamkan
+# SJ - NSS-25837
+#
+# Scripts Modified:
+#     bin/DG2/4500setProductDataDG2.pl
+#     bin/DG2/4601createNRcells.pl
+#     lib/cellconfig/LTE_CellConfiguration.pm
+----------------------------------------------------------------
+----------------------------------------------------------------
+5G 19.14
+----------------------------------------------------------------
+----------------------------------------------------------------
+# SJ - CXP 903 6539-1-6 -05/09/2019 -zyamkan
+# SJ - NSS-26875
+#
+# Scripts Modified:
+#     bin/DG2/4500setProductDataDG2.pl
+----------------------------------------------------------------
+# SJ - CXP 903 6539-1-5 -03/09/2019 -zyamkan
+# SJ - NSS-26434
+#
+# Scripts Modified:
+#     UnitTests/bin/SimSizeCheck.sh
+#     UnitTests/bin/pmFileLocation.sh
+#     UnitTests/bin/TopologyCheck.sh
+#---------------------------------------------------------
+# SJ - CXP 903 6539-1-4 -22/08/2019 -zyamkan
+# SJ - NSS-26787
+#
+# Scripts Modified:
+#     bin/DG2/4500setProductDataDG2.pl
+#---------------------------------------------------------------
+----------------------------------------------------------------
+5G 19.13
+----------------------------------------------------------------
+# SJ - CXP 903 6539-1-2 -05/08/2019 -zyamkan
+# SJ - NSS-26474
+#
+# Scripts Modified:
+#     dat/ProductData.env
+#     bin/DG2/4601createNRcells.pl
+#     bin/DG2/4602createNRInternalRelations.pl
+#     bin/DG2/4603setNRInternalcellRelations.pl
+#     bin/DG2/4607createNRLteRelations.pl
+#     bin/DG2/4608setNRLteRelations.pl
+#     UnitTests/dat/productData.env
+#
+----------------------------------------------------------------
+5G 19.13
+----------------------------------------------------------------
+# SJ - CXP 903 6539-1-2 -30/07/2019 -zyamkan
+# SJ - NSS-26474
+#
+# Scripts Modified:
+#     dat/ProductData.env
+#     dat/CONFIG.env
+#     bin/buildSims5G.pl
+#     bin/5g.pl
+#     bin/nrf.pl
+#     bin/pcc.pl
+#     bin/rnn_vnfm.pl
+#     bin/udr.pl
+#     bin/vrc.pl
+#     bin/vsd.pl
+#     bin/vtif.pl
+#     bin/pcg.pl
+#     bin/rnnode.pl
+#     bin/udm_ausf.pl
+#     bin/vpp.pl
+#     bin/vrm.pl
+#     bin/vtf.pl
+#
+#----------------------------------------------------------------
+

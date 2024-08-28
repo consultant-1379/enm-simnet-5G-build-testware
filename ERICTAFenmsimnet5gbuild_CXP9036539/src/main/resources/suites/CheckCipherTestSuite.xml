@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  <suite name="CheckCipherTestSuite">
+    
+           <test name="UnitTestExecutionTest">
+                  <classes>
+                         <class name="com.ericsson.ci.simnet.test.cases.UnitTestExecutionTest"/>
+                   </classes>
+         </test>
+                                 
+  </suite>
